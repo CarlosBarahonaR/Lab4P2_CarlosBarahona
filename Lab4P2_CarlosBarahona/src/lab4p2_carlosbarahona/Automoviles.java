@@ -10,11 +10,12 @@ package lab4p2_carlosbarahona;
  * @author Admin
  */
 public class Automoviles {
-    private String modelo;
-    private String VIN;
-    private String carroceria;
-    private int cantidadPasajeros;
-    private int capacidadMaletero;
+
+    String modelo;
+    String VIN;
+    String carroceria;
+    int cantidadPasajeros;
+    int capacidadMaletero;
 
     public Automoviles(String modelo, String VIN, String carroceria, int cantidadPasajeros, int capacidadMaletero) {
         this.modelo = modelo;
@@ -68,6 +69,10 @@ public class Automoviles {
     public String toString() {
         return "Automoviles{" + "modelo=" + modelo + ", VIN=" + VIN + ", carroceria=" + carroceria + ", cantidadPasajeros=" + cantidadPasajeros + ", capacidadMaletero=" + capacidadMaletero + '}';
     }
-    
-    
+
+    public int diasSinFallo() throws Excepcion {
+
+        return 0;
+    }
+
 }

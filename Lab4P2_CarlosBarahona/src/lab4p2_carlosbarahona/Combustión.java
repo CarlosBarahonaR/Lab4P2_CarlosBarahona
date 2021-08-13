@@ -5,11 +5,14 @@
  */
 package lab4p2_carlosbarahona;
 
+import java.awt.Color;
+
 /**
  *
  * @author Admin
  */
 public class Combustión extends Automoviles {
+
     private int consumoCombustible;
     private int duracionAceite;
     private int velocidadMaxima;
@@ -51,15 +54,33 @@ public class Combustión extends Automoviles {
         return tipoCambio;
     }
 
-    public void setTipoCambio(String tipoCambio) {
-        this.tipoCambio = tipoCambio;
+    public void setTipoCambio(String tipoCambio) throws Excepcion {
+        if (tipoCambio.equalsIgnoreCase("automatico") || tipoCambio.equalsIgnoreCase("manual")) {
+
+            this.tipoCambio = tipoCambio;
+
+        } else {
+            throw new Excepcion(Color.red, "El tipo de cambio debe ser entre automatico o manual");
+        }
     }
 
     @Override
     public String toString() {
         return "Combusti\u00f3n{" + "consumoCombustible=" + consumoCombustible + ", duracionAceite=" + duracionAceite + ", velocidadMaxima=" + velocidadMaxima + ", tipoCambio=" + tipoCambio + '}';
     }
-    
-    
-    
+
+    @Override
+    public int diasSinFallo() throws Excepcion {
+
+        int a = cantidadPasajeros * consumoCombustible;
+        int b = duracionAceite * consumoCombustible;
+        int respuesta = 2021 - a - b;
+        if (respuesta > 30) {
+            return respuesta;
+        } else {
+            throw new Excepcion(Color.red, "Debe de ser mayor de 30 días sin fallo");
+
+        }
+    }
+
 }

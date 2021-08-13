@@ -5,12 +5,14 @@
  */
 package lab4p2_carlosbarahona;
 
+import java.awt.Color;
+
 /**
  *
  * @author Admin
  */
 public class HibridoEnchufable extends Automoviles {
-    
+
     private int cantidadKilModoElectrico;
     private int cantidadMotoresElectricos;
     private int capacidadRemolque;
@@ -52,15 +54,32 @@ public class HibridoEnchufable extends Automoviles {
         return CuatroXCuatro;
     }
 
-    public void setCuatroXCuatro(String CuatroXCuatro) {
-        this.CuatroXCuatro = CuatroXCuatro;
+    public void setCuatroXCuatro(String CuatroXCuatro) throws Excepcion {
+        if (CuatroXCuatro.equalsIgnoreCase("si") || CuatroXCuatro.equalsIgnoreCase("no")) {
+            this.CuatroXCuatro = CuatroXCuatro;
+        } else {
+            throw new Excepcion(Color.red, "La respuesta debe ser entre si o no");
+        }
     }
 
     @Override
     public String toString() {
         return "HibridoEnchufable{" + "cantidadKilModoElectrico=" + cantidadKilModoElectrico + ", cantidadMotoresElectricos=" + cantidadMotoresElectricos + ", capacidadRemolque=" + capacidadRemolque + ", CuatroXCuatro=" + CuatroXCuatro + '}';
     }
-    
-    
-    
+
+    @Override
+    public int diasSinFallo() throws Excepcion {
+
+        int a = cantidadPasajeros * cantidadMotoresElectricos;
+        int b = cantidadKilModoElectrico / capacidadRemolque;
+        int c = a + b;
+        int respuesta = 2021 - c;
+        if (respuesta > 30) {
+            return respuesta;
+        } else {
+            throw new Excepcion(Color.red, "Debe de ser mayor de 30 días sin fallo");
+
+        }
+    }
+
 }

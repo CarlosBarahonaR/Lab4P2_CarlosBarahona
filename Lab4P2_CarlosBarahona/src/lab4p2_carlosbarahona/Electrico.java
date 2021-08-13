@@ -12,7 +12,7 @@ import java.awt.Color;
  * @author Admin
  */
 public class Electrico extends Automoviles {
-    
+
     private int cantidadKMRecorrer;
     private int cantidadBateriasAlmacena;
     private int aceleracion;
@@ -50,8 +50,8 @@ public class Electrico extends Automoviles {
         if (aceleracion > 0 && aceleracion < 100) {
             this.aceleracion = aceleracion;
 
-        }else{
-        throw new Excepcion(Color.red, "La aceleración no puede ser menor de 0 ni mayor que 100");
+        } else {
+            throw new Excepcion(Color.red, "La aceleración no puede ser menor de 0 ni mayor que 100");
         }
     }
 
@@ -67,7 +67,21 @@ public class Electrico extends Automoviles {
     public String toString() {
         return "Electrico{" + "cantidadKMRecorrer=" + cantidadKMRecorrer + ", cantidadBateriasAlmacena=" + cantidadBateriasAlmacena + ", aceleracion=" + aceleracion + ", tiempoCargaCompleta=" + tiempoCargaCompleta + '}';
     }
-    
-    
-    
+
+    @Override
+    public int diasSinFallo() throws Excepcion {
+
+        int a = tiempoCargaCompleta * cantidadPasajeros;
+        int b = a / aceleracion;
+        int c = b + cantidadBateriasAlmacena;
+        int respuesta = 2021 - c;
+        if (respuesta > 30) {
+            return respuesta;
+        } else {
+            throw new Excepcion(Color.red, "Debe de ser mayor de 30 días sin fallo");
+
+        }
+
+    }
+
 }

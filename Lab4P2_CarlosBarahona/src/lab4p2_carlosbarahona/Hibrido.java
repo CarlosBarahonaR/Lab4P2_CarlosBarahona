@@ -5,11 +5,14 @@
  */
 package lab4p2_carlosbarahona;
 
+import java.awt.Color;
+
 /**
  *
  * @author Admin
  */
 public class Hibrido extends Automoviles {
+
     private int capacidadBateria;
     private int capacidadMotorElectrico;
 
@@ -39,7 +42,19 @@ public class Hibrido extends Automoviles {
     public String toString() {
         return "Hibrido{" + "capacidadBateria=" + capacidadBateria + ", capacidadMotorElectrico=" + capacidadMotorElectrico + '}';
     }
-    
-    
-    
+
+    @Override
+    public int diasSinFallo() throws Excepcion {
+
+        int a = capacidadBateria * capacidadMaletero;
+        int b = a / cantidadPasajeros;
+        int respuesta = 2021 - b;
+        if (respuesta > 30) {
+            return respuesta;
+        } else {
+            throw new Excepcion(Color.red, "Debe de ser mayor de 30 días sin fallo");
+
+        }
+    }
+
 }
