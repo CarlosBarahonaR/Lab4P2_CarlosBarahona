@@ -17,13 +17,14 @@ public class Lab4P2_CarlosBarahona {
 
     /**
      * @param args the command line arguments
+     * @throws lab4p2_carlosbarahona.Excepcion
      */
     public static void main(String[] args) throws Excepcion {
         // TODO code application logic here
         Scanner r = new Scanner(System.in);
 
         ArrayList usuarios = new ArrayList();
-        ArrayList VIN=new ArrayList();
+        ArrayList VIN = new ArrayList();
         ArrayList automoviles = new ArrayList();
         ArrayList<Combustión> combustion = new ArrayList();
         ArrayList<Electrico> electrico = new ArrayList();
@@ -88,7 +89,7 @@ public class Lab4P2_CarlosBarahona {
                                                     System.out.println("Ingrese el modelo del Automovil de combustion");
                                                     String modelo = r.next();
                                                     boolean usado = false;
-                                                    String VIN2="";
+                                                    String VIN2 = "";
                                                     while (usado) {
                                                         System.out.println("Ingrese el VIN del Automovil de combustion");
                                                         VIN2 = r.next();
@@ -103,7 +104,7 @@ public class Lab4P2_CarlosBarahona {
                                                         }
 
                                                     }
-                                                   
+
                                                     System.out.println("Ingrese la carrocería del Automovil de combustion");
                                                     String carroceria = r.next();
                                                     System.out.println("Ingrese la cantidad de pasajeros del Automovil de combustion");
@@ -118,7 +119,7 @@ public class Lab4P2_CarlosBarahona {
                                                     int velocidadMaxima = r.nextInt();
                                                     System.out.println("Ingrese el tipo de cambio (manual o automatico) del Automovil de combustion");
                                                     String tipoCambio = r.next();
-                                                    automoviles.add(new Combustión( consumoCombustible, duraciónAceite, velocidadMaxima, tipoCambio, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
+                                                    automoviles.add(new Combustión(consumoCombustible, duraciónAceite, velocidadMaxima, tipoCambio, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
                                                     break;
                                                 }
                                                 case 2: {
@@ -196,7 +197,7 @@ public class Lab4P2_CarlosBarahona {
                                                     break;
                                                 }
                                                 case 3: {
-                                                  System.out.println("Ingrese el VIN del automovil combustion para eliminarlo");
+                                                    System.out.println("Ingrese el VIN del automovil combustion para eliminarlo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
@@ -243,19 +244,19 @@ public class Lab4P2_CarlosBarahona {
                                                             item2 = 1000;
                                                         }
                                                         if (item2 <= automoviles.size()) {
-                                                            System.out.println("Dias sin fallo "+((Combustión) usuarios.get(item2)).diasSinFallo()); 
+                                                            System.out.println("Dias sin fallo " + ((Combustión) usuarios.get(item2)).diasSinFallo());
                                                         } else {
                                                             System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
                                                         }
                                                     }
-                                                break;
+                                                    break;
                                                 }
                                             }
                                         }
                                         break;
                                     }
-                                    case 2:{
-                                                                            System.out.println("¿Que desea hacer?\n"
+                                    case 2: {
+                                        System.out.println("¿Que desea hacer?\n"
                                                 + "1) Agregar hibrido\n"
                                                 + "2) Modificar hibrido\n"
                                                 + "3) Eliminar hibrido\n"
@@ -268,7 +269,7 @@ public class Lab4P2_CarlosBarahona {
                                                     System.out.println("Ingrese el modelo del Automovil de hibrido");
                                                     String modelo = r.next();
                                                     boolean usado = false;
-                                                    String VIN2="";
+                                                    String VIN2 = "";
                                                     while (usado) {
                                                         System.out.println("Ingrese el VIN del Automovil de hibrido");
                                                         VIN2 = r.next();
@@ -283,7 +284,7 @@ public class Lab4P2_CarlosBarahona {
                                                         }
 
                                                     }
-                                                   
+
                                                     System.out.println("Ingrese la carrocería del Automovil de hibrido");
                                                     String carroceria = r.next();
                                                     System.out.println("Ingrese la cantidad de pasajeros del Automovil de hibrido");
@@ -294,8 +295,8 @@ public class Lab4P2_CarlosBarahona {
                                                     int capacidadBatería = r.nextInt();
                                                     System.out.println("Ingrese la capacidad del motor eléctrico (en kilowatt) del Automovil de hibrido");
                                                     int capacidadMotorElectrico = r.nextInt();
-                                                   
-                                                    automoviles.add(new Hibrido( capacidadBatería, capacidadMotorElectrico, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
+
+                                                    automoviles.add(new Hibrido(capacidadBatería, capacidadMotorElectrico, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
                                                     break;
                                                 }
                                                 case 2: {
@@ -354,7 +355,6 @@ public class Lab4P2_CarlosBarahona {
                                                                     ((Hibrido) usuarios.get(item)).setCapacidadMotorElectrico(r.nextInt());
                                                                     break;
                                                                 }
-                                                                
 
                                                             }
                                                         }
@@ -364,7 +364,7 @@ public class Lab4P2_CarlosBarahona {
                                                     break;
                                                 }
                                                 case 3: {
-                                                  System.out.println("Ingrese el VIN del automovil hibrido para eliminarlo");
+                                                    System.out.println("Ingrese el VIN del automovil hibrido para eliminarlo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
@@ -411,20 +411,20 @@ public class Lab4P2_CarlosBarahona {
                                                             item2 = 1000;
                                                         }
                                                         if (item2 <= automoviles.size()) {
-                                                            System.out.println("Dias sin fallo "+((Hibrido) usuarios.get(item2)).diasSinFallo()); 
+                                                            System.out.println("Dias sin fallo " + ((Hibrido) usuarios.get(item2)).diasSinFallo());
                                                         } else {
                                                             System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
                                                         }
                                                     }
-                                                break;
+                                                    break;
                                                 }
                                             }
                                         }
-                                    break;
+                                        break;
                                     }
-                                    
-                                    case 3:{
-                                                                               System.out.println("¿Que desea hacer?\n"
+
+                                    case 3: {
+                                        System.out.println("¿Que desea hacer?\n"
                                                 + "1) Agregar hibrido enchufable\n"
                                                 + "2) Modificar hibrido enchufable\n"
                                                 + "3) Eliminar hibrido enchufable\n"
@@ -437,7 +437,7 @@ public class Lab4P2_CarlosBarahona {
                                                     System.out.println("Ingrese el modelo del Automovil de hibrido enchufable");
                                                     String modelo = r.next();
                                                     boolean usado = false;
-                                                    String VIN2="";
+                                                    String VIN2 = "";
                                                     while (usado) {
                                                         System.out.println("Ingrese el VIN del Automovil de hibrido enchufable");
                                                         VIN2 = r.next();
@@ -452,7 +452,7 @@ public class Lab4P2_CarlosBarahona {
                                                         }
 
                                                     }
-                                                   
+
                                                     System.out.println("Ingrese la carrocería del Automovil de hibrido enchufable");
                                                     String carroceria = r.next();
                                                     System.out.println("Ingrese la cantidad de pasajeros del Automovil de hibrido enchufable");
@@ -467,7 +467,7 @@ public class Lab4P2_CarlosBarahona {
                                                     int cantidadRemolque = r.nextInt();
                                                     System.out.println("Ingrese si Automovil de hibrido enchufable es 4x4(Si o no)");
                                                     String CuatroXCuatro = r.next();
-                                                    automoviles.add(new HibridoEnchufable( cantidadKMModoElectrico, cantidadMotoresElectricos, cantidadRemolque, CuatroXCuatro, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
+                                                    automoviles.add(new HibridoEnchufable(cantidadKMModoElectrico, cantidadMotoresElectricos, cantidadRemolque, CuatroXCuatro, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
                                                     break;
                                                 }
                                                 case 2: {
@@ -545,7 +545,7 @@ public class Lab4P2_CarlosBarahona {
                                                     break;
                                                 }
                                                 case 3: {
-                                                  System.out.println("Ingrese el VIN del automovil hibrido enchufable para eliminarlo");
+                                                    System.out.println("Ingrese el VIN del automovil hibrido enchufable para eliminarlo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
@@ -592,35 +592,35 @@ public class Lab4P2_CarlosBarahona {
                                                             item2 = 1000;
                                                         }
                                                         if (item2 <= automoviles.size()) {
-                                                            System.out.println("Dias sin fallo "+((Combustión) usuarios.get(item2)).diasSinFallo()); 
+                                                            System.out.println("Dias sin fallo " + ((HibridoEnchufable) usuarios.get(item2)).diasSinFallo());
                                                         } else {
-                                                            System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
+                                                            System.out.println("No se encontro el VIN del automovil hibrido enchufable en la lista. Consulte con el soporte tecnico de la compañia.");
                                                         }
                                                     }
-                                                break;
+                                                    break;
                                                 }
                                             }
                                         }
-                                    break;    
+                                        break;
                                     }
-                                    
-                                    case 4:{
-                                                                                System.out.println("¿Que desea hacer?\n"
-                                                + "1) Agregar combustion\n"
-                                                + "2) Modificar combustion\n"
-                                                + "3) Eliminar combustion\n"
-                                                + "4) Listar combustion\n"
+
+                                    case 4: {
+                                        System.out.println("¿Que desea hacer?\n"
+                                                + "1) Agregar electrico\n"
+                                                + "2) Modificar electrico\n"
+                                                + "3) Eliminar electrico\n"
+                                                + "4) Listar electrico\n"
                                                 + "5) Calcular días sin fallos");
                                         int op = r.nextInt();
                                         while (op != 6) {
                                             switch (op) {
                                                 case 1: {
-                                                    System.out.println("Ingrese el modelo del Automovil de combustion");
+                                                    System.out.println("Ingrese el modelo del Automovil de electrico");
                                                     String modelo = r.next();
                                                     boolean usado = false;
-                                                    String VIN2="";
+                                                    String VIN2 = "";
                                                     while (usado) {
-                                                        System.out.println("Ingrese el VIN del Automovil de combustion");
+                                                        System.out.println("Ingrese el VIN del Automovil de electrico");
                                                         VIN2 = r.next();
 
                                                         for (int x = 0; x < VIN.size(); x++) {
@@ -633,32 +633,32 @@ public class Lab4P2_CarlosBarahona {
                                                         }
 
                                                     }
-                                                   
-                                                    System.out.println("Ingrese la carrocería del Automovil de combustion");
+
+                                                    System.out.println("Ingrese la carrocería del Automovil de electrico");
                                                     String carroceria = r.next();
-                                                    System.out.println("Ingrese la cantidad de pasajeros del Automovil de combustion");
+                                                    System.out.println("Ingrese la cantidad de pasajeros del Automovil de electrico");
                                                     int cantidadPasajeros = r.nextInt();
-                                                    System.out.println("Ingrese la capacidad del maletero del Automovil de combustion");
+                                                    System.out.println("Ingrese la capacidad del maletero del Automovil de electrico");
                                                     int capacidadMaletero = r.nextInt();
-                                                    System.out.println("Ingrese el consumo de combustible (en kilometro por litro) del Automovil de combustion");
-                                                    int consumoCombustible = r.nextInt();
-                                                    System.out.println("Ingrese la duración del aceite (en meses) del Automovil de combustion");
-                                                    int duraciónAceite = r.nextInt();
-                                                    System.out.println("Ingrese la velocidad maxima del Automovil de combustion");
-                                                    int velocidadMaxima = r.nextInt();
-                                                    System.out.println("Ingrese el tipo de cambio (manual o automatico) del Automovil de combustion");
-                                                    String tipoCambio = r.next();
-                                                    automoviles.add(new Combustión( consumoCombustible, duraciónAceite, velocidadMaxima, tipoCambio, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
+                                                    System.out.println("Ingrese la cantidad de kilometros que puede recorrer el Automovil de electrico");
+                                                    int cantidadKMRecorrer = r.nextInt();
+                                                    System.out.println("Ingrese la cantidad de baterías que almacena el Automovil de electrico");
+                                                    int cantidadBateriasAlmacena = r.nextInt();
+                                                    System.out.println("Ingrese la aceleración del Automovil de electrico");
+                                                    int aceleracion = r.nextInt();
+                                                    System.out.println("Ingrese el tiempo que dura una carga completa (en minutos) del Automovil de electrico ");
+                                                    int tiempoCargaCompleta = r.nextInt();
+                                                    automoviles.add(new Electrico(cantidadKMRecorrer, cantidadBateriasAlmacena, aceleracion, tiempoCargaCompleta, modelo, VIN2, carroceria, cantidadPasajeros, capacidadMaletero));
                                                     break;
                                                 }
                                                 case 2: {
-                                                    System.out.println("Ingrese el VIN del automovil combustion para buscarlo");
+                                                    System.out.println("Ingrese el VIN del automovil electrico para buscarlo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
                                                         String VIN3 = "";
-                                                        if (automoviles.get(x) instanceof Combustión) {
-                                                            VIN3 = ((Combustión) automoviles.get(x)).getVIN();
+                                                        if (automoviles.get(x) instanceof Electrico) {
+                                                            VIN3 = ((Electrico) automoviles.get(x)).getVIN();
                                                         }
                                                         if (VIN3.equalsIgnoreCase(VIN4)) {
                                                             item2 = x;
@@ -668,71 +668,71 @@ public class Lab4P2_CarlosBarahona {
                                                         }
                                                     }
                                                     if (item2 <= automoviles.size()) {
-                                                        if (automoviles.get(item) instanceof Combustión) {
+                                                        if (automoviles.get(item) instanceof Electrico) {
                                                             System.out.println("¿Que desea modificar?\n"
                                                                     + "1) Modelo\n"
                                                                     + "2) VIN\n"
                                                                     + "3) Carroceria\n"
                                                                     + "4) Cantidad Pasajeros\n"
                                                                     + "5) Capacidad maletero\n"
-                                                                    + "6) Consumo combustible\n"
-                                                                    + "7) Duracion del aceite\n"
-                                                                    + "8) Velocidad maxima\n"
-                                                                    + "9) Tipo cambio");
+                                                                    + "6) Cantidad de kilometros que puede recorrer\n"
+                                                                    + "7) Cantidad de baterías que almacena\n"
+                                                                    + "8) Aceleración\n"
+                                                                    + "9) Tiempo que dura una carga completa");
                                                             int variable = r.nextInt();
                                                             switch (variable) {
                                                                 case 1: {
-                                                                    ((Combustión) usuarios.get(item)).setModelo(r.next());
+                                                                    ((Electrico) usuarios.get(item)).setModelo(r.next());
                                                                     break;
                                                                 }
                                                                 case 2: {
-                                                                    ((Combustión) usuarios.get(item)).setVIN(r.next());
+                                                                    ((Electrico) usuarios.get(item)).setVIN(r.next());
                                                                     break;
                                                                 }
                                                                 case 3: {
-                                                                    ((Combustión) usuarios.get(item)).setCarroceria(r.next());
+                                                                    ((Electrico) usuarios.get(item)).setCarroceria(r.next());
                                                                     break;
                                                                 }
                                                                 case 4: {
-                                                                    ((Combustión) usuarios.get(item)).setCantidadPasajeros(r.nextInt());
+                                                                    ((Electrico) usuarios.get(item)).setCantidadPasajeros(r.nextInt());
                                                                     break;
                                                                 }
                                                                 case 5: {
-                                                                    ((Combustión) usuarios.get(item)).setCapacidadMaletero(r.nextInt());
+                                                                    ((Electrico) usuarios.get(item)).setCapacidadMaletero(r.nextInt());
                                                                     break;
                                                                 }
                                                                 case 6: {
-                                                                    ((Combustión) usuarios.get(item)).setConsumoCombustible(r.nextInt());
+                                                                    ((Electrico) usuarios.get(item)).setCantidadKMRecorrer(r.nextInt());
                                                                     break;
                                                                 }
                                                                 case 7: {
-                                                                    ((Combustión) usuarios.get(item)).setDuracionAceite(r.nextInt());
+                                                                    ((Electrico) usuarios.get(item)).setCantidadBateriasAlmacena(r.nextInt());
                                                                     break;
                                                                 }
                                                                 case 8: {
-                                                                    ((Combustión) usuarios.get(item)).setVelocidadMaxima(r.nextInt());
+                                                                    ((Electrico) usuarios.get(item)).setAceleracion(r.nextInt());
                                                                     break;
                                                                 }
                                                                 case 9: {
-                                                                    ((Combustión) usuarios.get(item)).setTipoCambio(r.next());
+                                                                    ((Electrico) usuarios.get(item)).setTiempoCargaCompleta(r.nextInt());
                                                                     break;
                                                                 }
 
                                                             }
                                                         }
                                                     } else {
-                                                        System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
+                                                        System.out.println("No se encontro el VIN del automovil electrico en la lista. Consulte con el soporte tecnico de la compañia.");
                                                     }
                                                     break;
                                                 }
                                                 case 3: {
-                                                  System.out.println("Ingrese el VIN del automovil combustion para eliminarlo");
+                                                    System.out.println("Ingrese el VIN del automovil electrico para eliminarlo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
                                                         String VIN3 = "";
-                                                        if (automoviles.get(x) instanceof Combustión) {
-                                                            VIN3 = ((Combustión) automoviles.get(x)).getVIN();
+                                                        if (automoviles.get(x) instanceof Electrico) {
+                                                            VIN3 = ((Electrico) automoviles.get(x)).getVIN();
                                                         }
                                                         if (VIN3.equalsIgnoreCase(VIN4)) {
                                                             item2 = x;
@@ -744,13 +744,13 @@ public class Lab4P2_CarlosBarahona {
                                                     if (item2 <= automoviles.size()) {
                                                         automoviles.remove(item2);
                                                     } else {
-                                                        System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
+                                                        System.out.println("No se encontro el VIN del automovil electrico en la lista. Consulte con el soporte tecnico de la compañia.");
                                                     }
                                                     break;
                                                 }
                                                 case 4: {
                                                     for (int z = 0; z < automoviles.size(); z++) {
-                                                        if (automoviles.get(z) instanceof Combustión) {
+                                                        if (automoviles.get(z) instanceof Electrico) {
                                                             System.out.println(automoviles.get(z));
 
                                                         }
@@ -758,12 +758,12 @@ public class Lab4P2_CarlosBarahona {
                                                     break;
                                                 }
                                                 case 5: {
-                                                    System.out.println("Ingrese el VIN del automovil combustion para calcular los días sin fallo");
+                                                    System.out.println("Ingrese el VIN del automovil electrico para calcular los días sin fallo");
                                                     String VIN4 = r.next();
                                                     int item2 = 0;
                                                     for (int x = 0; x < automoviles.size(); x++) {
                                                         String VIN3 = "";
-                                                        if (automoviles.get(x) instanceof Combustión) {
+                                                        if (automoviles.get(x) instanceof Electrico) {
                                                             VIN3 = ((Combustión) automoviles.get(x)).getVIN();
                                                         }
                                                         if (VIN3.equalsIgnoreCase(VIN4)) {
@@ -773,18 +773,18 @@ public class Lab4P2_CarlosBarahona {
                                                             item2 = 1000;
                                                         }
                                                         if (item2 <= automoviles.size()) {
-                                                            System.out.println("Dias sin fallo "+((Combustión) usuarios.get(item2)).diasSinFallo()); 
+                                                            System.out.println("Dias sin fallo " + ((Electrico) usuarios.get(item2)).diasSinFallo());
                                                         } else {
-                                                            System.out.println("No se encontro el VIN del automovil de combustion en la lista. Consulte con el soporte tecnico de la compañia.");
+                                                            System.out.println("No se encontro el VIN del automovil electrico en la lista. Consulte con el soporte tecnico de la compañia.");
                                                         }
                                                     }
-                                                break;
+                                                    break;
                                                 }
                                             }
                                         }
-                                    break;
+                                        break;
                                     }
-                                            
+
                                 }
                             }
 

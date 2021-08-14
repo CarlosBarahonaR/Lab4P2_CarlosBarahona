@@ -11,27 +11,27 @@ package lab4p2_carlosbarahona;
  */
 public class Usuarios {
 
-    private int usuario;
-    private int contraseña;
+    private String usuario;
+    private String contraseña;
 
-    public Usuarios(int usuario, int contraseña) {
+    public Usuarios(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
 
-    public int getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 
